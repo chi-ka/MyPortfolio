@@ -1,0 +1,13 @@
+@tailwind base; @tailwind components; @tailwind utilities;
+:root{--bg:7 11 24;--surface:13 20 38;--ink:230 236 248;--mute:140 152 178;--line:34 46 74;--a:96 165 250;--b:167 139 250;--c:34 211 238}
+.light{--bg:247 249 253;--surface:255 255 255;--ink:15 23 42;--mute:84 98 125;--line:219 226 240;--a:37 99 235;--b:109 40 217;--c:8 145 178}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{@apply bg-bg text-ink font-sans antialiased}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+ background-image:linear-gradient(rgb(var(--line)/.45) 1px,transparent 1px),linear-gradient(90deg,rgb(var(--line)/.45) 1px,transparent 1px);
+ background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse 70% 50% at 50% 0%,#000,transparent);mask-image:radial-gradient(ellipse 70% 50% at 50% 0%,#000,transparent)}
+:focus-visible{outline:2px solid rgb(var(--c));outline-offset:3px;border-radius:6px}
+.btn{@apply inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold transition}
+.btn-p{@apply btn bg-a text-bg hover:brightness-110}
+.btn-g{@apply btn border border-line text-ink hover:border-a hover:text-a}
